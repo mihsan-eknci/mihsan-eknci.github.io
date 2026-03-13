@@ -46,6 +46,58 @@
         </aside>
     </div>
 
+    <div class="contact-container">
+        <h2 style="text-align: center; margin-bottom: 20px;">Detaylı İletişim Formu</h2>
+        <form action="#">
+            <label for="ad-soyad">Ad Soyad:</label>
+            <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Örn: Ebru Gundes" required>
+
+            <label for="eposta">E-posta Adresi:</label>
+            <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required>
+
+            <label for="sifre">Başvuru Takip Şifresi:</label>
+            <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin">
+
+            <label>İletişim Tercihi:</label>
+            <div class="secenek-grubu">
+                <input type="radio" id="tercih-eposta" name="tercih" value="eposta">
+                <label for="tercih-eposta" class="inline-label">Bana e-posta ile ulaşın</label><br>
+                <input type="radio" id="tercih-telefon" name="tercih" value="telefon">
+                <label for="tercih-telefon" class="inline-label">Bana telefonla ulaşın</label>
+            </div>
+
+            <label>İlgi Alanları / Yetenekler:</label>
+            <div class="secenek-grubu">
+                <input type="checkbox" id="html" name="yetenek" value="html">
+                <label for="html" class="inline-label">HTML</label><br>
+                <input type="checkbox" id="css" name="yetenek" value="css">
+                <label for="css" class="inline-label">CSS</label><br>
+                <input type="checkbox" id="algoritma" name="yetenek" value="algoritma">
+                <label for="algoritma" class="inline-label">Algoritma</label>
+            </div>
+
+            <label for="konu">Konu:</label>
+            <select id="konu" name="konu">
+                <option value="">Lütfen bir konu seçin...</option>
+                <option value="is-teklifi">İş Teklifi</option>
+                <option value="soru">Soru</option>
+                <option value="geri-bildirim">Geri Bildirim</option>
+            </select>
+
+            <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+            <input type="file" id="dosya" name="dosya">
+
+            <label for="mesaj">Mesajınız:</label>
+            <textarea id="mesaj" name="mesaj" rows="5"
+                placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+
+            <div class="buton-grubu">
+                <button type="submit" class="gonder-btn">Gönder</button>
+                <button type="reset" class="temizle-btn">Temizle</button>
+            </div>
+        </form>
+    </div>
+
     <footer>
         <p>&copy; 2026 Web Programlama Dersi</p>
     </footer>

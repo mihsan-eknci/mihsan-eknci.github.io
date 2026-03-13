@@ -1,7 +1,8 @@
-/* İletişim sayfasındaki linkler için özel hiyerarşik seçici */
+/* contact.css */
+
+/* Önceki stillerin korunması */
 .icerik-alani ul li a {
     color: #d9534f;
-    /* Farklı bir vurgu rengi */
     text-decoration: none;
 }
 
@@ -9,9 +10,92 @@
     text-decoration: underline;
 }
 
-/* SSS başlıkları için hiyerarşik seçim */
 .yan-menu .sss-item h3 {
     font-size: 1.1em;
     color: #2c3e50;
     margin-top: 15px;
+}
+
+/* Lab 3: Form Tasarımı [cite: 107] */
+
+.contact-container {
+    width: 60%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Elemanlarının Genel Düzeni [cite: 127] */
+.contact-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Çoklu Seçici Kullanımı [cite: 127] */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="password"],
+.contact-container select,
+.contact-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Seçenek Grupları (Radio ve Checkbox) İçin Arka Plan [Görsel Gereği] */
+.secenek-grubu {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.inline-label {
+    display: inline !important;
+    font-weight: normal !important;
+    margin-left: 5px;
+}
+
+/* Buton Tasarımları  */
+.buton-grubu {
+    display: flex;
+    gap: 15px;
+}
+
+.gonder-btn,
+.temizle-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.gonder-btn {
+    background-color: #007bff;
+}
+
+.gonder-btn:hover {
+    background-color: #0056b3;
+}
+
+.temizle-btn {
+    background-color: #dc3545;
+}
+
+.temizle-btn:hover {
+    background-color: #a71d2a;
 }

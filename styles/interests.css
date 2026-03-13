@@ -1,0 +1,13 @@
+/* Hiyerarşik Seçici Örneği: Tanım listesi başlıkları */
+.yan-menu dl dt {
+    font-weight: bold;
+    color: #4a90e2;
+    margin-top: 10px;
+}
+
+/* Hiyerarşik Seçici Örneği: Tanım listesi açıklamaları */
+.yan-menu dl dd {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    font-style: italic;
+}

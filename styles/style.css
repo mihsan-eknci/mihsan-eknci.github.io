@@ -1,0 +1,20 @@
+/* Genel Ayarlar ve Sıfırlama */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Grup Seçici (Zorunlu)  */
+h1,
+h2,
+p {
+    color: #333;
+    margin-bottom: 10px;
+}

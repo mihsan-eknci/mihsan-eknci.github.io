@@ -1,0 +1,17 @@
+/* İletişim sayfasındaki linkler için özel hiyerarşik seçici */
+.icerik-alani ul li a {
+    color: #d9534f;
+    /* Farklı bir vurgu rengi */
+    text-decoration: none;
+}
+
+.icerik-alani ul li a:hover {
+    text-decoration: underline;
+}
+
+/* SSS başlıkları için hiyerarşik seçim */
+.yan-menu .sss-item h3 {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-top: 15px;
+}

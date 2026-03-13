@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehmet İhsan Ekinci - Portfolyo</title>
+    <title>Ana Sayfa - Mehmet İhsan Ekinci</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
-<body>
 
-    <header>
-        <h1>Mehmet İhsan Ekinci</h1>
-        <p>Bilgisayar Mühendisliği Öğrencisi | Web Programlama Dünyasına Giriş</p>
-    </header>
+<body>
 
     <nav>
         <ul>
@@ -22,35 +21,50 @@
         </ul>
     </nav>
 
-    <main>
-        <section id="welcome">
-            <h2>Hoş Geldiniz</h2>
-            <p>Bu web sitesi, <strong>Web Programlama</strong> dersi kapsamında hazırlanmış örnek bir kişisel tanıtım sayfasıdır. Amacım, HTML'in temel etiketlerini ve sayfa yapısını öğrenmektir.</p>
-        </section>
+    <header class="ust-bilgi">
+        <h1>CSS Temel Ödevi</h1>
+        <p>Mehmet İhsan Ekinci | Web Programlama Dersi</p>
+    </header>
 
-        <section id="quick-links">
-            <h2>Hızlı Bağlantılar</h2>
-            <p>Sayfa içindeki bölümlere buradan ulaşabilirsiniz:</p>
-            <ul>
-                <li><a href="#welcome">Giriş Bölümüne Git</a></li>
-                <li><a href="#goals">Hedeflerime Git</a></li>
-            </ul>
-        </section>
+    <div class="konteynir">
+        <main class="icerik-alani">
+            <section id="welcome">
+                <h2>Hoş Geldiniz</h2>
+                <p>Bu web sitesi, <strong>Web Programlama</strong> dersi kapsamında hazırlanmış örnek bir kişisel
+                    tanıtım sayfasıdır. Amacım, HTML'in temel etiketlerini ve CSS ile sayfa yapısını
+                    öğrenmektir.</p>
+            </section>
 
-        <section id="goals">
-            <h2>Öğrenme Hedeflerim</h2>
-            <ol>
-                <li>HTML temellerini eksiksiz kavramak</li>
-                <li>CSS ile modern arayüzler tasarlamak</li>
-                <li>JavaScript ile dinamik özellikler eklemek</li>
-            </ol>
-        </section>
-    </main>
+            <section id="goals">
+                <h2>Öğrenme Hedeflerim</h2>
+                <ol>
+                    <li>HTML5 ve CSS3 temellerini kavramak </li>
+                    <li>Sadece ham kod kullanarak modern arayüzler tasarlamak </li>
+                    <li>Modüler kodlama disiplini kazanmak</li>
+                </ol>
+            </section>
+        </main>
+
+        <aside class="yan-menu">
+            <h2>Hızlı Bilgiler</h2>
+            <p><strong>Üniversite:</strong> Marmara Üniversitesi</p>
+            <p><strong>Bölüm:</strong> Bilgisayar Mühendisliği</p>
+            <p><strong>Ders:</strong> Web Programlama</p>
+
+            <div class="hizli-baglanti">
+                <h3>Sayfa İçi Gezinti</h3>
+                <ul>
+                    <li><a href="#welcome">Giriş Bölümü</a></li>
+                    <li><a href="#goals">Hedeflerim</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Mehmet İhsan Ekinci | Web Programlama Dersi</p>
+        <p>&copy; © 2026 Web Programlama Dersi.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
 </body>
+
 </html>

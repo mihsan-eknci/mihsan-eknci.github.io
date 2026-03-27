@@ -1,20 +1,16 @@
-/* Genel Ayarlar ve Sıfırlama */
+/* style.css */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html,
 body {
-    background-color: #f0f2f5;
-    padding: 40px;
+    height: 100%;
+    /* vh hesaplamaları için temel */
     font-family: Arial, sans-serif;
-}
-
-/* Grup Seçici (Zorunlu)  */
-h1,
-h2,
-p {
-    color: #333;
-    margin-bottom: 10px;
+    background-color: #f0f2f5;
+    overflow: hidden;
+    /* Kaydırma çubuğunu engeller */
 }

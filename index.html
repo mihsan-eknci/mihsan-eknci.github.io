@@ -4,67 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa - Mehmet İhsan Ekinci</title>
+    <title>Flexbox Ödevi - Mehmet İhsan Ekinci</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
+    <div class="wrapper">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+            <div class="logo">MIHSAN.DEV</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">Dersler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
 
-    <header class="ust-bilgi">
-        <h1>CSS Temel Ödevi</h1>
-        <p>Mehmet İhsan Ekinci | Web Programlama Dersi</p>
-    </header>
-
-    <div class="konteynir">
-        <main class="icerik-alani">
-            <section id="welcome">
-                <h2>Hoş Geldiniz</h2>
-                <p>Bu web sitesi, <strong>Web Programlama</strong> dersi kapsamında hazırlanmış örnek bir kişisel
-                    tanıtım sayfasıdır. Amacım, HTML'in temel etiketlerini ve CSS ile sayfa yapısını
-                    öğrenmektir.</p>
-            </section>
-
-            <section id="goals">
-                <h2>Öğrenme Hedeflerim</h2>
-                <ol>
-                    <li>HTML5 ve CSS3 temellerini kavramak </li>
-                    <li>Sadece ham kod kullanarak modern arayüzler tasarlamak </li>
-                    <li>Modüler kodlama disiplini kazanmak</li>
-                </ol>
-            </section>
-        </main>
-
-        <aside class="yan-menu">
-            <h2>Hızlı Bilgiler</h2>
-            <p><strong>Üniversite:</strong> Marmara Üniversitesi</p>
-            <p><strong>Bölüm:</strong> Bilgisayar Mühendisliği</p>
-            <p><strong>Ders:</strong> Web Programlama</p>
-
-            <div class="hizli-baglanti">
-                <h3>Sayfa İçi Gezinti</h3>
-                <ul>
-                    <li><a href="#welcome">Giriş Bölümü</a></li>
-                    <li><a href="#goals">Hedeflerim</a></li>
-                </ul>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Mehmet İhsan Ekinci</h1>
+                <p>Marmara Üniversitesi Bilgisayar Mühendisliği öğrencisi. Frontend ve ASP.NET Core dünyasını
+                    keşfediyorum.</p>
+                <button class="hero-btn">Projelerimi Gör</button>
             </div>
-        </aside>
+            <div class="hero-image-box">
+                <span>Görsel Kutusu</span>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="card">Web Geliştirme</div>
+            <div class="card">ASP.NET Core</div>
+            <div class="card">Java / Spring</div>
+            <div class="card">Minimalist Tasarım</div>
+            <div class="card">Japanese Philo</div>
+            <div class="card">Software Intern</div>
+        </section>
+
+        <section class="grow-section">
+            <div class="box box-1">
+                <h3>Kaizen</h3>
+                <p>Sürekli İyileşme (Grow: 1)</p>
+            </div>
+            <div class="box box-2">
+                <h3>Ikigai</h3>
+                <p>Varoluş Nedeni (Grow: 2)</p>
+            </div>
+            <div class="box box-3">
+                <h3>Shugyo</h3>
+                <p>Disiplinli Eğitim (Grow: 1)</p>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <p>© 2026 - Mehmet İhsan Ekinci | Temel Flexbox Örneği</p>
+        </footer>
+
     </div>
-
-    <footer>
-        <p>&copy; © 2026 Web Programlama Dersi.</p>
-    </footer>
-
 </body>
 
 </html>

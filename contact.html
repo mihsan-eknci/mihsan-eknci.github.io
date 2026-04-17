@@ -1,108 +1,80 @@
-<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - Mehmet İhsan Ekinci</title>
+    <title>İletişim | Mehmet İhsan Ekinci</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/contact.css">
 </head>
 
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
-
-    <div class="konteynir">
-        <main class="icerik-alani">
-            <h2>İletişim Bilgilerim</h2>
-            <p>Bana aşağıdaki kanallardan ulaşabilirsiniz:</p>
-            <ul>
-                <li>✉️ E-posta: <a href="mailto:ihsanekinci@marun.edu.tr">ihsanekinci@marun.edu.tr</a></li>
-                <li>💻 GitHub: <a href="https://github.com/mihsan-eknci" target="_blank">Profilim</a></li>
-                <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/mehmetihsanekinci/" target="_blank">Profilim</a>
-                </li>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
             </ul>
-        </main>
+        </nav>
 
-        <aside class="yan-menu">
-            <h2>Sık Sorulan Sorular</h2>
-            <div class="sss-item">
-                <h3>Dönüş Süresi?</h3>
-                <p>Genellikle 24 saat içinde yanıt veriyorum.</p>
+        <section class="hero flex-center">
+            <div class="contact-header">
+                <h1>Bana Ulaşın</h1>
+                <div class="social-links">
+                    <a href="mailto:ihsanekinci@marun.edu.tr" class="social-item">✉️ E-posta</a>
+                    <a href="https://github.com/mihsan-eknci" target="_blank" class="social-item">💻 GitHub</a>
+                    <a href="https://www.linkedin.com/in/mehmetihsanekinci/" target="_blank" class="social-item">🔗
+                        LinkedIn</a>
+                </div>
             </div>
-            <div class="sss-item">
-                <h3>İş Birliği?</h3>
-                <p>Açık kaynak projelerine her zaman açığım.</p>
+        </section>
+
+        <section class="main-content">
+            <div class="faq-section">
+                <h3>Sık Sorulan Sorular</h3>
+                <div class="faq-item">
+                    <strong>Dönüş Süresi?</strong>
+                    <p>Genellikle 24 saat içinde yanıt veriyorum.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>İş Birliği?</strong>
+                    <p>Açık kaynak projelerine her zaman açığım.</p>
+                </div>
             </div>
-        </aside>
+            <div class="contact-info-card flex-center">
+                <p>Proje fikirleriniz veya sorularınız için formu doldurabilir ya da doğrudan yazabilirsiniz.</p>
+            </div>
+        </section>
+
+        <section class="extra-section form-wrapper">
+            <div class="contact-form-container">
+                <form action="#">
+                    <div class="form-row">
+                        <input type="text" placeholder="Ad Soyad" required>
+                        <input type="email" placeholder="E-posta" required>
+                    </div>
+                    <select id="konu">
+                        <option value="">Konu Seçin...</option>
+                        <option value="is">İş Teklifi</option>
+                        <option value="soru">Soru</option>
+                    </select>
+                    <textarea placeholder="Mesajınız..." rows="3"></textarea>
+                    <button type="submit" class="btn-submit">Gönder</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
     </div>
-
-    <div class="contact-container">
-        <h2 style="text-align: center; margin-bottom: 20px;">Detaylı İletişim Formu</h2>
-        <form action="#">
-            <label for="ad-soyad">Ad Soyad:</label>
-            <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Örn: Ebru Gundes" required>
-
-            <label for="eposta">E-posta Adresi:</label>
-            <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required>
-
-            <label for="sifre">Başvuru Takip Şifresi:</label>
-            <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin">
-
-            <label>İletişim Tercihi:</label>
-            <div class="secenek-grubu">
-                <input type="radio" id="tercih-eposta" name="tercih" value="eposta">
-                <label for="tercih-eposta" class="inline-label">Bana e-posta ile ulaşın</label><br>
-                <input type="radio" id="tercih-telefon" name="tercih" value="telefon">
-                <label for="tercih-telefon" class="inline-label">Bana telefonla ulaşın</label>
-            </div>
-
-            <label>İlgi Alanları / Yetenekler:</label>
-            <div class="secenek-grubu">
-                <input type="checkbox" id="html" name="yetenek" value="html">
-                <label for="html" class="inline-label">HTML</label><br>
-                <input type="checkbox" id="css" name="yetenek" value="css">
-                <label for="css" class="inline-label">CSS</label><br>
-                <input type="checkbox" id="algoritma" name="yetenek" value="algoritma">
-                <label for="algoritma" class="inline-label">Algoritma</label>
-            </div>
-
-            <label for="konu">Konu:</label>
-            <select id="konu" name="konu">
-                <option value="">Lütfen bir konu seçin...</option>
-                <option value="is-teklifi">İş Teklifi</option>
-                <option value="soru">Soru</option>
-                <option value="geri-bildirim">Geri Bildirim</option>
-            </select>
-
-            <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
-            <input type="file" id="dosya" name="dosya">
-
-            <label for="mesaj">Mesajınız:</label>
-            <textarea id="mesaj" name="mesaj" rows="5"
-                placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
-
-            <div class="buton-grubu">
-                <button type="submit" class="gonder-btn">Gönder</button>
-                <button type="reset" class="temizle-btn">Temizle</button>
-            </div>
-        </form>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Web Programlama Dersi</p>
-    </footer>
-
 </body>
 
 </html>

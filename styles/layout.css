@@ -1,34 +1,105 @@
 /* layout.css */
+
+/* ─────────────────────────────────────────────
+   Tüm sayfaları kapsayan ana kutu
+   height: 100vh → min-height: 100vh (içerik
+   artık dışarı taşabilir, sayfa kaydırılır)
+───────────────────────────────────────────── */
 .wrapper {
     display: flex;
     flex-direction: column;
-    /* Dikey yerleşim zorunlu */
-    height: 100vh;
-    /* Tüm ekranı kapla */
+    min-height: 100vh;   /* 100vh değil; sabit kilitlemez */
+    width: 100%;
 }
 
-/* Her bölümün vh değerleri */
+/* ─────────────────────────────────────────────
+   NAVBAR
+   Sabit bir yükseklik yerine min-height + flex-row
+   kullanılıyor. Nav linkleri yan yana duracak.
+───────────────────────────────────────────── */
 .navbar {
-    height: 10vh;
+    min-height: 64px;          /* 10vh → sabit piksel değeri */
+    display: flex;
+    flex-direction: row;        /* logo ve nav-links yan yana */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;          /* scroll'da üstte sabit kalır */
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo resmi — navbar yüksekliğini bozmaz */
+.navbar-logo {
+    max-height: 40px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Nav linkleri yatay liste */
+.nav-links {
+    display: flex;
+    flex-direction: row;       /* dikey liste sorununu çözer */
+    align-items: center;
+    gap: 30px;
+}
+
+/* ─────────────────────────────────────────────
+   HERO  (30vh → min-height ile içeriğe göre büyür)
+───────────────────────────────────────────── */
+.hero,
+.main-content {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;          /* üst-alt padding ile nefes alır */
+    gap: 40px;
+}
+
+/* ─────────────────────────────────────────────
+   CARDS & INFO SECTION
+───────────────────────────────────────────── */
+.cards-section,
+.info-section {
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;           /* kartlar küçük ekranda alt satıra geçer */
+    padding: 40px 8%;
+    gap: 20px;
+}
+
+/* ─────────────────────────────────────────────
+   GROW / EXTRA SECTION
+───────────────────────────────────────────── */
+.grow-section,
+.extra-section {
+    min-height: 160px;
     display: flex;
 }
 
-.hero {
-    height: 30vh;
-    display: flex;
-}
-
-.cards-section {
-    height: 30vh;
-    display: flex;
-}
-
-.grow-section {
-    height: 20vh;
-    display: flex;
-}
-
+/* ─────────────────────────────────────────────
+   FOOTER — Sticky Footer mantığı:
+   flex: 1 0 auto on wrapper + margin-top:auto
+   footer'ı içerik az olsa bile en alta iter.
+───────────────────────────────────────────── */
 .main-footer {
-    height: 10vh;
+    min-height: 60px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+    background-color: var(--dark-color);
+    color: var(--white);
+    margin-top: auto;          /* sticky footer: içerik azsa bile en altta */
+}
+
+/* ─────────────────────────────────────────────
+   Ortak Flex Hizalama Yardımcı Sınıfı
+───────────────────────────────────────────── */
+.flex-center {
+    justify-content: center;
+    align-items: center;
 }

@@ -1,98 +1,146 @@
 /* index.css */
 
-/* Navbar: Logo sola, linkler sağa */
-.navbar {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+/* Navbar logo styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-color);
 }
 
-/* ÖNEMLİ: Linklerin yan yana dizilmesi için */
+.logo span {
+    color: var(--primary-color);
+}
+
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+    display: flex;          /* yan yana hizalama — layout.css'i destekler */
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #4a90e2;
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section Enhancements */
+.hero-content {
+    flex: 1.2;
+    padding-right: 50px;
+}
+
+.badge {
+    background: #e1effe;
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
-/* Hero: Yazı ve Görsel kutusu yan yana */
-.hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    /* Kutuyu esnetir */
-    padding: 20px 5%;
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 15px 0;
 }
 
-.hero-content {
-    flex: 1;
+.hero-btns {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image-box {
-    flex: 1;
-    background: #eee;
-    border: 2px dashed #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 0.8;
 }
 
-/* Kartlar: Yan yana ve taşarsa alt satıra */
-.cards-section {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 10px 5%;
-    justify-content: center;
-}
-
-.card {
-    flex: 1 1 150px;
-    background: white;
-    border-radius: 8px;
+.profile-placeholder {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    /* Organik şekil */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Grow Bölümü: 1-2-1 Oranı */
-.box {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Card Styling */
+.cards-section {
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    display: flex;          /* flex-direction:column'ın çalışması için zorunlu */
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+    min-width: 140px;       /* kartlar küçük ekranda ezilmez */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Grow Boxes */
+.box {
+    transition: var(--transition);
+    color: white;
+    text-align: center;
+}
+
+.box:hover {
+    filter: brightness(1.1);
 }
 
 .box-1 {
     flex-grow: 1;
-    background: #a2b9bc;
+    background: #5d6d7e;
 }
 
 .box-2 {
     flex-grow: 2;
-    background: #6b8e23;
+    background: var(--secondary-color);
 }
 
 .box-3 {
     flex-grow: 1;
-    background: #b8a9c9;
-}
-
-/* Footer: Tam ortalı */
-.main-footer {
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    color: white;
+    background: #8e44ad;
 }

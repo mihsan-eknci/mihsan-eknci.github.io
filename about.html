@@ -1,49 +1,61 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımda - Mehmet İhsan Ekinci</title>
+    <title>Hakkımda | Mehmet İhsan Ekinci</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/about.css">
 </head>
 
 <body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
+        <section class="hero flex-center">
+            <div class="about-hero">
+                <h1>Ben Kimim?</h1>
+                <p>Marmara Üniversitesi Bilgisayar Mühendisliği öğrencisiyim.</p>
+            </div>
+        </section>
 
-    <div class="konteynir">
-        <main class="icerik-alani">
-            <h2>Ben Kimim?</h2>
-            <p>Merhaba, ben <strong>Mehmet İhsan Ekinci</strong>. Şu anda İstanbul'da Bilgisayar Mühendisliği
-                öğrencisiyim[cite: 89, 90].</p>
+        <section class="info-section">
+            <div class="bio-text">
+                <h3>Merhaba, Ben Mehmet İhsan Ekinci</h3>
+                <p>Yazılım dünyasında kendimi geliştirmeyi, karmaşık problemleri basit ve estetik çözümlerle
+                    buluşturmayı seviyorum.</p>
+            </div>
+            <div class="edu-card flex-center">
+                <h3>Eğitim Bilgilerim</h3>
+                <p><strong>Okul:</strong> Marmara Üniversitesi</p>
+                <p><strong>Ders:</strong> Web Programlama</p>
+            </div>
+        </section>
 
-            <blockquote>
-                "İyi yazılmış bir web sitesi, hem kullanıcıyı hem geliştiriciyi mutlu eder."
-            </blockquote>
-        </main>
+        <section class="extra-section">
+            <div class="quote-box flex-center">
+                <blockquote>
+                    "İyi yazılmış bir web sitesi, hem kullanıcıyı hem geliştiriciyi mutlu eder."
+                </blockquote>
+            </div>
+        </section>
 
-        <aside class="yan-menu">
-            <h2>Eğitim ve Hedefler</h2>
-            <p><strong>Eğitim Bilgilerim:</strong> Marmara Üniversitesi</p>
-            <p><strong>Ders:</strong> Web Programlama</p>
-        </aside>
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Web Programlama Dersi</p>
-    </footer>
-
 </body>
 
 </html>

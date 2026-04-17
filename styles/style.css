@@ -1,4 +1,21 @@
 /* style.css */
+:root {
+    /* Renk Paleti */
+    --primary-color: #4a90e2;
+    /* Modern Mavi */
+    --secondary-color: #6b8e23;
+    /* Doğal Yeşil */
+    --bg-color: #f8f9fa;
+    /* Açık Gri Arka Plan */
+    --dark-color: #2c3e50;
+    /* Koyu Metin Rengi */
+    --white: #ffffff;
+    --border-color: #e1e4e8;
+
+    /* Geçişler */
+    --transition: all 0.3s ease;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,10 +24,21 @@
 
 html,
 body {
-    height: 100%;
-    /* vh hesaplamaları için temel */
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    overflow: hidden;
-    /* Kaydırma çubuğunu engeller */
+    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    /* overflow: hidden kaldırıldı — sayfa artık kaydırılabilir */
+}
+
+/* Genel Link Stilleri */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
 }

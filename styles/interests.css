@@ -1,13 +1,97 @@
-/* Hiyerarşik Seçici Örneği: Tanım listesi başlıkları */
-.yan-menu dl dt {
-    font-weight: bold;
-    color: #4a90e2;
+/* interests.css */
+
+.interests-header {
+    text-align: center;
+}
+
+.interests-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+}
+
+/* İlgi Alanları "Pill" Tasarımı */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.tech-stack,
+.routine-list {
+    flex: 1;
+}
+
+.pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pill {
+    background: var(--white);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pill:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Rutin Listesi */
+.routine-list ol {
+    margin-top: 15px;
+}
+
+.routine-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.routine-list li span {
+    background: var(--secondary-color);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+/* Sözlük Bölümü */
+.dictionary-area {
+    flex-direction: column;
+    padding: 20px 8%;
+    background: #ecf0f1;
+}
+
+.dictionary-grid {
+    display: flex;
+    width: 100%;
+    gap: 30px;
     margin-top: 10px;
 }
 
-/* Hiyerarşik Seçici Örneği: Tanım listesi açıklamaları */
-.yan-menu dl dd {
-    font-size: 0.9em;
+.dict-item {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dict-item dt {
+    font-weight: bold;
+    color: var(--primary-color);
     margin-bottom: 5px;
-    font-style: italic;
 }

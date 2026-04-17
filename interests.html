@@ -1,61 +1,77 @@
-<!-- interests.html -->
 <!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İlgi Alanlarım - Mehmet İhsan Ekinci</title>
+    <title>İlgi Alanlarım | Mehmet İhsan Ekinci</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/interests.css">
 </head>
 
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
-
-    <div class="konteynir">
-        <main class="icerik-alani">
-            <h2>Teknoloji Alanındaki İlgi Alanlarım</h2>
-            <ul>
-                <li>Web Geliştirme</li>
-                <li>Yapay Zekâ Uygulamaları</li>
-                <li>Mobil Uygulama Geliştirme</li>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
             </ul>
+        </nav>
 
-            <h2>Günlük Çalışma Rutinim</h2>
-            <ol>
-                <li>Ders materyallerini gözden geçirmek</li>
-                <li>Kodlama pratiği yapmak</li>
-                <li>Yeni teknolojiler araştırmak</li>
-            </ol>
-        </main>
+        <section class="hero flex-center">
+            <div class="interests-header">
+                <h1>Teknoloji & Çalışma</h1>
+                <p>Gelişim yolculuğumdaki odak noktalarım ve rutinlerim.</p>
+            </div>
+        </section>
 
-        <aside class="yan-menu">
-            <h2>Web Teknolojileri Sözlüğü</h2>
-            <dl>
-                <dt>HTML</dt>
-                <dd>Web sayfalarının iskeletini oluşturur.</dd>
-                <dt>CSS</dt>
-                <dd>Görsel tasarımı düzenler.</dd>
-                <dt>JavaScript</dt>
-                <dd>Etkileşim kazandırır.</dd>
-            </dl>
-        </aside>
+        <section class="main-content">
+            <div class="tech-stack">
+                <h3>İlgi Alanlarım</h3>
+                <div class="pill-container">
+                    <span class="pill">Web Geliştirme</span>
+                    <span class="pill">Yapay Zekâ</span>
+                    <span class="pill">Mobil Uygulama</span>
+                </div>
+            </div>
+            <div class="routine-list">
+                <h3>Günlük Rutinim</h3>
+                <ol>
+                    <li><span>1</span> Materyal Gözlemi</li>
+                    <li><span>2</span> Kodlama Pratiği</li>
+                    <li><span>3</span> Yeni Teknolojiler</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="extra-section dictionary-area">
+            <h3>Web Teknolojileri Sözlüğü</h3>
+            <div class="dictionary-grid">
+                <dl class="dict-item">
+                    <dt>HTML</dt>
+                    <dd>Sayfaların iskeletini oluşturur.</dd>
+                </dl>
+                <dl class="dict-item">
+                    <dt>CSS</dt>
+                    <dd>Görsel tasarımı düzenler.</dd>
+                </dl>
+                <dl class="dict-item">
+                    <dt>JavaScript</dt>
+                    <dd>Etkileşim kazandırır.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Web Programlama Dersi</p>
-    </footer>
-
 </body>
 
 </html>

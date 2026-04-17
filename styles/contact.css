@@ -1,101 +1,110 @@
 /* contact.css */
 
-/* Önceki stillerin korunması */
-.icerik-alani ul li a {
-    color: #d9534f;
-    text-decoration: none;
+.contact-header {
+    text-align: center;
 }
 
-.icerik-alani ul li a:hover {
-    text-decoration: underline;
+.contact-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.yan-menu .sss-item h3 {
-    font-size: 1.1em;
-    color: #2c3e50;
-    margin-top: 15px;
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
-/* Lab 3: Form Tasarımı [cite: 107] */
-
-.contact-container {
-    width: 60%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.social-item {
+    background: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
 }
 
-/* Form Elemanlarının Genel Düzeni [cite: 127] */
-.contact-container label {
+.social-item:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* FAQ & Info Section */
+.main-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px 8%;
+}
+
+.faq-section {
+    flex: 1.5;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.faq-item strong {
+    color: var(--primary-color);
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #444;
 }
 
-/* Çoklu Seçici Kullanımı [cite: 127] */
-.contact-container input[type="text"],
-.contact-container input[type="email"],
-.contact-container input[type="password"],
-.contact-container select,
-.contact-container textarea {
+.contact-info-card {
+    flex: 1;
+    background: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Form Tasarımı */
+.form-wrapper {
+    background: #f1f3f5;
+    padding: 15px 8%;
+    overflow-y: auto;
+    /* Form uzunsa bu alan içinde kayar */
+}
+
+.contact-form-container {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Seçenek Grupları (Radio ve Checkbox) İçin Arka Plan [Görsel Gereği] */
-.secenek-grubu {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.inline-label {
-    display: inline !important;
-    font-weight: normal !important;
-    margin-left: 5px;
-}
-
-/* Buton Tasarımları  */
-.buton-grubu {
+.form-row {
     display: flex;
     gap: 15px;
+    margin-bottom: 10px;
 }
 
-.gonder-btn,
-.temizle-btn {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.btn-submit {
+    background: var(--primary-color);
     color: white;
-    font-weight: bold;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
+    font-weight: bold;
+    width: 100%;
+    transition: var(--transition);
 }
 
-.gonder-btn {
-    background-color: #007bff;
-}
-
-.gonder-btn:hover {
-    background-color: #0056b3;
-}
-
-.temizle-btn {
-    background-color: #dc3545;
-}
-
-.temizle-btn:hover {
-    background-color: #a71d2a;
+.btn-submit:hover {
+    opacity: 0.9;
+    transform: scale(0.99);
 }

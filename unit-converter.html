@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birim Dönüştürücü | Mehmet İhsan Ekinci</title>
+    <meta name="description" content="Metre-Kilometre, Celsius-Fahrenheit, Kilogram-Gram birim dönüştürücü uygulaması.">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/unit-converter.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Uygulamalar ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="grade-calc.html">📊 Not Hesaplama</a></li>
+                        <li><a href="unit-converter.html">🔄 Birim Dönüştürücü</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero flex-center app-hero uc-hero">
+            <div class="app-hero-content">
+                <span class="app-badge uc-badge">🔄 Uygulama 2</span>
+                <h1>Birim Dönüştürücü</h1>
+                <p>Değerini gir, dönüşüm tipini seç — sonucu anında gör.</p>
+            </div>
+        </section>
+
+        <!-- ANA BÖLÜM -->
+        <section class="app-section uc-app-section">
+
+            <!-- Dönüştürücü Kartı -->
+            <div class="uc-card">
+                <div class="uc-card-header">
+                    <span class="calc-icon">⚗️</span>
+                    <h2>Dönüşüm Yap</h2>
+                </div>
+
+                <form id="converterForm" novalidate>
+                    <!-- Dönüşüm Tipi Seçimi (Tab butonlar) -->
+                    <div class="type-tabs" id="typeTabs" role="tablist">
+                        <button type="button" class="type-tab active" data-type="m-km"
+                            id="tab-m-km" role="tab" aria-selected="true">
+                            📏 Uzunluk
+                        </button>
+                        <button type="button" class="type-tab" data-type="c-f"
+                            id="tab-c-f" role="tab" aria-selected="false">
+                            🌡️ Sıcaklık
+                        </button>
+                        <button type="button" class="type-tab" data-type="kg-g"
+                            id="tab-kg-g" role="tab" aria-selected="false">
+                            ⚖️ Ağırlık
+                        </button>
+                    </div>
+
+                    <!-- Dönüşüm Açıklaması -->
+                    <div class="conversion-label" id="conversionLabel">
+                        <span id="conversionDesc">Metre → Kilometre</span>
+                    </div>
+
+                    <!-- Değer Girişi -->
+                    <div class="form-group">
+                        <label for="valueInput">Değer Giriniz</label>
+                        <div class="input-with-unit">
+                            <input
+                                type="number"
+                                id="valueInput"
+                                placeholder="Sayı girin..."
+                                step="any"
+                                required
+                            >
+                            <span class="unit-tag" id="unitTag">m</span>
+                        </div>
+                    </div>
+
+                    <!-- Gizli select (erişilebilirlik için) -->
+                    <select id="conversionType" style="display:none;" aria-label="Dönüşüm tipi">
+                        <option value="m-km">Metre → Kilometre</option>
+                        <option value="c-f">Celsius → Fahrenheit</option>
+                        <option value="kg-g">Kilogram → Gram</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-primary calc-btn uc-calc-btn" id="convertBtn">
+                        🔄 Dönüştür
+                    </button>
+                    <button type="button" class="btn btn-outline reset-btn" id="ucResetBtn">
+                        Sıfırla
+                    </button>
+                </form>
+            </div>
+
+            <!-- Sonuç Paneli -->
+            <div class="result-panel uc-result-panel" id="ucResultPanel">
+                <div class="result-placeholder" id="ucResultPlaceholder">
+                    <div class="placeholder-icon">🔢</div>
+                    <p>Değeri gir ve <strong>Dönüştür</strong> butonuna bas.</p>
+                </div>
+
+                <div class="uc-result-content" id="ucResultContent" style="display:none;">
+                    <!-- Görsel Akış: Kaynak → Ok → Hedef -->
+                    <div class="conversion-flow">
+                        <div class="flow-box source-box">
+                            <span class="flow-label" id="sourceLabel">Giriş</span>
+                            <span class="flow-value" id="sourceVal">–</span>
+                            <span class="flow-unit" id="sourceUnit">m</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-box target-box">
+                            <span class="flow-label" id="targetLabel">Sonuç</span>
+                            <span class="flow-value" id="targetVal">–</span>
+                            <span class="flow-unit" id="targetUnit">km</span>
+                        </div>
+                    </div>
+
+                    <!-- Formül Gösterimi -->
+                    <div class="formula-box" id="formulaBox">
+                        <span class="formula-title">📐 Formül</span>
+                        <span class="formula-text" id="formulaText">değer ÷ 1000</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bilgi Kartları -->
+        <section class="extra-section uc-info-section">
+            <div class="uc-info-grid">
+                <div class="uc-info-card">
+                    <div class="uc-info-icon">📏</div>
+                    <h3>Uzunluk</h3>
+                    <p>1 Kilometre = 1000 Metre</p>
+                    <code>km = m ÷ 1000</code>
+                </div>
+                <div class="uc-info-card">
+                    <div class="uc-info-icon">🌡️</div>
+                    <h3>Sıcaklık</h3>
+                    <p>Celsius → Fahrenheit</p>
+                    <code>°F = (°C × 1.8) + 32</code>
+                </div>
+                <div class="uc-info-card">
+                    <div class="uc-info-icon">⚖️</div>
+                    <h3>Ağırlık</h3>
+                    <p>1 Kilogram = 1000 Gram</p>
+                    <code>g = kg × 1000</code>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/unit-converter.js"></script>
+</body>
+
+</html>

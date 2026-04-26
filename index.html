@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mihsan Dev | Portfolio</title>
+    <title>MiE Dev | Portfolio</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/index.css">
@@ -17,10 +17,17 @@
                 <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="about.html">Hakkımda</a></li>
                 <li><a href="interests.html">İlgi Alanlarım</a></li>
                 <li><a href="contact.html">İletişim</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Uygulamalar ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="grade-calc.html">📊 Not Hesaplama</a></li>
+                        <li><a href="unit-converter.html">🔄 Birim Dönüştürücü</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
@@ -81,6 +88,7 @@
             <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
         </footer>
     </div>
+    <script src="scripts/navbar.js"></script>
 </body>
 
 </html>

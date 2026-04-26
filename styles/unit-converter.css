@@ -1,0 +1,454 @@
+/* unit-converter.css — style.css değişkenleriyle uyumlu */
+
+/* ── Hero ── */
+.app-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e8a 100%);
+    color: var(--white);
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 70px 8%;
+}
+
+.uc-hero {
+    background: linear-gradient(135deg, #1a8a7a 0%, #2c5d8a 100%);
+}
+
+.app-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.35);
+    margin-bottom: 8px;
+}
+
+.uc-badge {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.app-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin: 0;
+    color: var(--white);
+}
+
+.app-hero p {
+    font-size: 1rem;
+    opacity: 0.88;
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+/* ── App Section Düzeni ── */
+.uc-app-section {
+    align-items: flex-start;
+}
+
+/* ── Dönüştürücü Kartı ── */
+.uc-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    padding: 36px 32px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 480px;
+    transition: var(--transition);
+}
+
+.uc-card:hover {
+    box-shadow: 0 8px 32px rgba(26, 138, 122, 0.14);
+}
+
+.uc-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.uc-card-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.calc-icon {
+    font-size: 1.8rem;
+}
+
+/* ── Tab Butonlar ── */
+.type-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.type-tab {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    text-align: center;
+}
+
+.type-tab:hover {
+    border-color: #1a8a7a;
+    color: #1a8a7a;
+    background-color: #e8f8f5;
+}
+
+.type-tab.active {
+    background-color: #1a8a7a;
+    border-color: #1a8a7a;
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(26, 138, 122, 0.25);
+}
+
+/* ── Dönüşüm Açıklaması ── */
+.conversion-label {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    background-color: #e8f8f5;
+    border-radius: 8px;
+    border: 1px solid #a8e0d8;
+}
+
+#conversionDesc {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a8a7a;
+}
+
+/* ── Form Elemanları ── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: stretch;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.input-with-unit:focus-within {
+    border-color: #1a8a7a;
+    box-shadow: 0 0 0 4px rgba(26, 138, 122, 0.12);
+}
+
+.input-with-unit input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--dark-color);
+    background-color: var(--bg-color);
+    font-family: inherit;
+}
+
+.unit-tag {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #1a8a7a;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 48px;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.input-with-unit input.error {
+    background-color: #fff8f8;
+}
+
+/* ── Butonlar ── */
+.uc-calc-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #1a8a7a;
+    border-color: #1a8a7a;
+    color: var(--white);
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.uc-calc-btn:hover {
+    background-color: #147066;
+    border-color: #147066;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 138, 122, 0.35);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #1a8a7a;
+    border-color: #1a8a7a;
+}
+
+.reset-btn:hover {
+    background-color: #1a8a7a;
+    color: var(--white);
+}
+
+/* ── Sonuç Paneli ── */
+.uc-result-panel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 420px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    padding: 36px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+.result-placeholder {
+    text-align: center;
+    color: #a0a8b4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.result-placeholder p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ── Dönüşüm Akış Görünümü ── */
+.uc-result-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.conversion-flow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.flow-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 20px 24px;
+    border-radius: 14px;
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+}
+
+.source-box {
+    background-color: #e8f8f5;
+    border: 2px solid #a8e0d8;
+}
+
+.target-box {
+    background-color: #eaf4fe;
+    border: 2px solid #a8cdf0;
+}
+
+.flow-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7a8d;
+}
+
+.flow-value {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--dark-color);
+    line-height: 1.1;
+    word-break: break-all;
+}
+
+.flow-unit {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1a8a7a;
+    padding: 3px 10px;
+    background-color: rgba(26, 138, 122, 0.12);
+    border-radius: 12px;
+}
+
+.target-box .flow-unit {
+    color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.12);
+}
+
+.flow-arrow {
+    font-size: 1.8rem;
+    color: #aab7c4;
+    font-weight: 300;
+    flex-shrink: 0;
+}
+
+/* Formül Kutusu */
+.formula-box {
+    background-color: var(--bg-color);
+    border: 1px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.formula-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #6b7a8d;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.formula-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-family: 'Courier New', monospace;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+/* ── Bilgi Kartları ── */
+.uc-info-section {
+    padding: 40px 8%;
+    justify-content: center;
+    background-color: #f0faf8;
+}
+
+.uc-info-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.uc-info-card {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.uc-info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(26, 138, 122, 0.12);
+    border-color: #a8e0d8;
+}
+
+.uc-info-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.uc-info-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.uc-info-card p {
+    font-size: 0.85rem;
+    color: #6b7a8d;
+    margin-bottom: 10px;
+}
+
+.uc-info-card code {
+    display: inline-block;
+    background-color: #e8f8f5;
+    color: #1a8a7a;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .conversion-flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .uc-card, .uc-result-panel { max-width: 100%; }
+    .uc-result-panel { min-height: 260px; }
+    .type-tab { font-size: 0.75rem; padding: 8px 8px; }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Hesaplama | Mehmet İhsan Ekinci</title>
+    <meta name="description" content="Öğrenci vize ve final notuna göre ortalama, harf notu ve geçme durumunu hesapla.">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/grade-calc.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Uygulamalar ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="grade-calc.html">📊 Not Hesaplama</a></li>
+                        <li><a href="unit-converter.html">🔄 Birim Dönüştürücü</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- HERO: Sayfa başlığı -->
+        <section class="hero flex-center app-hero">
+            <div class="app-hero-content">
+                <span class="app-badge">📊 Uygulama 1</span>
+                <h1>Öğrenci Not Hesaplama</h1>
+                <p>Vize ve final notunu gir, ortalama ile harf notunu anında öğren.</p>
+            </div>
+        </section>
+
+        <!-- ANA BÖLÜM: Form + Sonuç Paneli -->
+        <section class="app-section">
+            <!-- Form Kartı -->
+            <div class="calc-card">
+                <div class="calc-card-header">
+                    <span class="calc-icon">🎓</span>
+                    <h2>Not Bilgilerini Gir</h2>
+                </div>
+
+                <form id="gradeForm" class="grade-form" novalidate>
+                    <div class="form-group">
+                        <label for="studentName">Ad Soyad</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Örn: Mehmet İhsan Ekinci"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-row-two">
+                        <div class="form-group">
+                            <label for="vizeNote">Vize Notu <span class="weight-badge">%40</span></label>
+                            <input
+                                type="number"
+                                id="vizeNote"
+                                placeholder="0 – 100"
+                                min="0"
+                                max="100"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="finalNote">Final Notu <span class="weight-badge">%60</span></label>
+                            <input
+                                type="number"
+                                id="finalNote"
+                                placeholder="0 – 100"
+                                min="0"
+                                max="100"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary calc-btn" id="calcBtn">
+                        Hesapla
+                    </button>
+                    <button type="button" class="btn btn-outline reset-btn" id="resetBtn">
+                        Sıfırla
+                    </button>
+                </form>
+            </div>
+
+            <!-- Sonuç Paneli -->
+            <div class="result-panel" id="resultPanel">
+                <div class="result-placeholder" id="resultPlaceholder">
+                    <div class="placeholder-icon">📋</div>
+                    <p>Notları girip <strong>Hesapla</strong> butonuna bas.</p>
+                </div>
+
+                <div class="result-content" id="resultContent" style="display:none;">
+                    <div class="result-name" id="resultName"></div>
+
+                    <div class="result-score-ring">
+                        <div class="score-circle" id="scoreCircle">
+                            <span class="score-value" id="scoreValue">–</span>
+                            <span class="score-label">Ortalama</span>
+                        </div>
+                    </div>
+
+                    <div class="result-badges">
+                        <div class="result-badge letter-badge" id="letterBadge">–</div>
+                        <div class="result-badge status-badge" id="statusBadge">–</div>
+                    </div>
+
+                    <div class="result-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Vize (%40)</span>
+                            <span class="breakdown-value" id="vizeContrib">–</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Final (%60)</span>
+                            <span class="breakdown-value" id="finalContrib">–</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Not Baremi Tablosu -->
+        <section class="extra-section baremi-section">
+            <div class="baremi-container">
+                <h3>📌 Not Baremi</h3>
+                <div class="baremi-grid">
+                    <div class="baremi-item grade-aa">AA — 90+</div>
+                    <div class="baremi-item grade-ba">BA — 85–89</div>
+                    <div class="baremi-item grade-bb">BB — 80–84</div>
+                    <div class="baremi-item grade-cb">CB — 75–79</div>
+                    <div class="baremi-item grade-cc">CC — 70–74</div>
+                    <div class="baremi-item grade-dc">DC — 65–69</div>
+                    <div class="baremi-item grade-dd">DD — 60–64</div>
+                    <div class="baremi-item grade-fd">FD — 50–59</div>
+                    <div class="baremi-item grade-ff">FF — 0–49</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/grade-calc.js"></script>
+</body>
+
+</html>

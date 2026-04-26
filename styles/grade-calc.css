@@ -1,0 +1,386 @@
+/* grade-calc.css — style.css değişkenleriyle uyumlu */
+
+/* ── Hero Bölümü ── */
+.app-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e8a 100%);
+    color: var(--white);
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 70px 8%;
+}
+
+.app-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.35);
+    margin-bottom: 8px;
+}
+
+.app-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin: 0;
+    color: var(--white);
+}
+
+.app-hero p {
+    font-size: 1rem;
+    opacity: 0.88;
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+/* ── Hesap Kartı ── */
+.calc-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    padding: 36px 32px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 480px;
+    transition: var(--transition);
+}
+
+.calc-card:hover {
+    box-shadow: 0 8px 32px rgba(74, 144, 226, 0.14);
+}
+
+.calc-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.calc-icon {
+    font-size: 1.8rem;
+}
+
+.calc-card-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+/* ── Form Elemanları ── */
+.grade-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.weight-badge {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--dark-color);
+    background-color: var(--bg-color);
+    outline: none;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.12);
+}
+
+.form-group input.error {
+    border-color: #e74c3c;
+    background-color: #fff8f8;
+}
+
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ── Butonlar ── */
+.calc-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: -8px;
+}
+
+/* ── Sonuç Paneli ── */
+.result-panel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 420px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    padding: 36px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+/* Placeholder */
+.result-placeholder {
+    text-align: center;
+    color: #a0a8b4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.result-placeholder p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Sonuç içeriği */
+.result-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Puan Çemberi */
+.result-score-ring {
+    position: relative;
+}
+
+.score-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-color) 0deg, var(--border-color) 0deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(74, 144, 226, 0.25);
+    transition: background 0.6s ease;
+}
+
+.score-circle::after {
+    content: '';
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+.score-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--dark-color);
+    z-index: 1;
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 0.65rem;
+    color: #888;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Rozet alanı */
+.result-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result-badge {
+    padding: 8px 22px;
+    border-radius: 24px;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.letter-badge {
+    background-color: var(--primary-color);
+    color: var(--white);
+    min-width: 80px;
+}
+
+.status-badge {
+    min-width: 90px;
+}
+
+.status-gecti {
+    background-color: #e6f9f0;
+    color: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.status-kaldi {
+    background-color: #fdf0ef;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+/* Katkı dökümü */
+.result-breakdown {
+    width: 100%;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.88rem;
+}
+
+.breakdown-label {
+    color: #6b7a8d;
+    font-weight: 500;
+}
+
+.breakdown-value {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+/* ── Not Baremi Bölümü ── */
+.baremi-section {
+    padding: 40px 8%;
+    justify-content: center;
+}
+
+.baremi-container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.baremi-container h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.baremi-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.baremi-item {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    cursor: default;
+}
+
+.baremi-item:hover { transform: translateY(-2px); }
+
+.grade-aa { background: #e8f4fd; color: #1a6fa8; border-color: #4a90e2; }
+.grade-ba { background: #eaf7ee; color: #1a7a3c; border-color: #27ae60; }
+.grade-bb { background: #f0f9e8; color: #4a7c10; border-color: #6b8e23; }
+.grade-cb { background: #f9f5e8; color: #7a6010; border-color: #d4ac0d; }
+.grade-cc { background: #fef9e7; color: #7d6608; border-color: #f1c40f; }
+.grade-dc { background: #fdf2e9; color: #7e5109; border-color: #e67e22; }
+.grade-dd { background: #fdebd0; color: #784212; border-color: #d35400; }
+.grade-fd { background: #fdedec; color: #922b21; border-color: #e74c3c; }
+.grade-ff { background: #f2f3f4; color: #5d6d7e; border-color: #aab7b8; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .form-row-two { grid-template-columns: 1fr; }
+    .result-panel { min-height: 280px; }
+    .calc-card, .result-panel { max-width: 100%; }
+}

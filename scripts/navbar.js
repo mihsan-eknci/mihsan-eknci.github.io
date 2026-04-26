@@ -20,7 +20,7 @@
         || 'index.html';          // kök URL için fallback
 
     // Uygulama sayfaları — dropdown toggle da aktif olacak
-    const appPages = ['grade-calc.html', 'unit-converter.html'];
+    const appPages = ['grade-calc.html', 'unit-converter.html', 'hafta7.html'];
     const isAppPage = appPages.includes(currentFile);
 
     // Tüm nav linklerini tara

@@ -144,3 +144,71 @@
     flex-grow: 1;
     background: #8e44ad;
 }
+
+/* ─── Hafta 7 CTA Banner ──────────────────────────────────────── */
+.h7-cta-section {
+    padding: 32px 8%;
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f0ff 100%);
+    border-top: 1px solid #e0e7ff;
+    border-bottom: 1px solid #e0e7ff;
+}
+
+.h7-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.h7-cta-badge {
+    background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.h7-cta-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0 0 4px;
+}
+
+.h7-cta-text p {
+    color: #555;
+    font-size: 0.92rem;
+    margin: 0;
+}
+
+.h7-cta-btn {
+    background: linear-gradient(135deg, var(--primary-color), #7c3aed) !important;
+    border: none !important;
+    padding: 13px 28px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    color: #fff !important;
+    display: inline-block;
+}
+
+.h7-cta-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(74, 144, 226, 0.4) !important;
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .h7-cta-inner { flex-direction: column; align-items: flex-start; }
+    .h7-cta-btn { width: 100%; text-align: center; }
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Kayıt | Mehmet İhsan Ekinci</title>
+    <meta name="description" content="Bootstrap ile geliştirilmiş Hafta 7 Etkinlik Kayıt uygulaması. Etkinliğe kayıt ol, başvurunu tamamla.">
+
+    <!-- Bootstrap 5 CSS — önce yüklenir; proje stilleri üzerine cascade eder -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Proje Global Stilleri (Bootstrap'in üzerine cascade eder) -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/hafta7.css">
+</head>
+
+<body id="hafta7Body">
+    <div class="wrapper">
+
+        <!-- ═══════════════════════════════════════
+             1/5 — NAVBAR
+        ════════════════════════════════════════ -->
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Uygulamalar ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="grade-calc.html">📊 Not Hesaplama</a></li>
+                        <li><a href="unit-converter.html">🔄 Birim Dönüştürücü</a></li>
+                        <li><a href="hafta7.html">🎟️ Hafta 7: Etkinlik Kaydı</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ═══════════════════════════════════════
+             2/5 — HERO (Bootstrap py-5 + bg-light)
+        ════════════════════════════════════════ -->
+        <section class="h7-hero py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <span class="badge h7-badge mb-3">🎟️ Hafta 7 — Bootstrap & JS</span>
+                        <h1 class="h7-hero-title">TechConf 2026<br><span class="h7-accent">Etkinlik Kayıt</span></h1>
+                        <p class="h7-hero-desc mt-3">
+                            Yılın en büyük teknoloji konferansına katılmak için formumuzu doldur.
+                            Yapay zeka, web teknolojileri ve yazılım mühendisliği üzerine ilham dolu
+                            oturumlar seni bekliyor!
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="#kayitFormu" class="btn btn-primary h7-btn-main" id="heroKayitBtn">
+                                <i class="bi bi-pencil-square me-2"></i>Kayıt Ol
+                            </a>
+                            <button type="button" class="btn btn-outline-secondary h7-btn-theme" id="themeToggleBtn">
+                                <i class="bi bi-moon-stars-fill me-2" id="themeIcon"></i>Tema Değiştir
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center">
+                        <div class="h7-event-visual">
+                            <div class="h7-event-badge">
+                                <div class="h7-event-date">
+                                    <span class="h7-month">MAY</span>
+                                    <span class="h7-day">15</span>
+                                    <span class="h7-year">2026</span>
+                                </div>
+                                <div class="h7-event-info">
+                                    <div class="h7-event-name">TechConf 2026</div>
+                                    <div class="h7-event-location"><i class="bi bi-geo-alt-fill me-1"></i>İstanbul, Türkiye</div>
+                                    <div class="h7-event-spots">
+                                        <i class="bi bi-people-fill me-1"></i>
+                                        <span id="spotsLeft">247</span> kişilik yer kaldı
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             3/5 — ÖZELLIKLER (Bootstrap Grid + Cards)
+        ════════════════════════════════════════ -->
+        <section class="h7-features-section py-5">
+            <div class="container">
+                <h2 class="text-center h7-section-title mb-5">Etkinlik Öne Çıkanları</h2>
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="card h7-feature-card h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="h7-feature-icon h7-icon-blue mb-3">
+                                    <i class="bi bi-cpu-fill"></i>
+                                </div>
+                                <h5 class="card-title h7-card-title">Yapay Zeka</h5>
+                                <p class="card-text text-muted">
+                                    Üretken yapay zeka, büyük dil modelleri ve makine öğrenimi
+                                    üzerine sektör liderlerinden ilham dolu konuşmalar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h7-feature-card h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="h7-feature-icon h7-icon-purple mb-3">
+                                    <i class="bi bi-globe2"></i>
+                                </div>
+                                <h5 class="card-title h7-card-title">Web Teknolojileri</h5>
+                                <p class="card-text text-muted">
+                                    Modern frontend & backend geliştirme, WebAssembly, edge computing
+                                    ve performans optimizasyonu üzerine pratik workshop'lar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h7-feature-card h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="h7-feature-icon h7-icon-green mb-3">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h5 class="card-title h7-card-title">Networking</h5>
+                                <p class="card-text text-muted">
+                                    500+ geliştirici, tasarımcı ve girişimciyle bir arada olma fırsatı.
+                                    Kariyer fırsatları ve mentorluk seansları seni bekliyor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             4/5 — KAYIT FORMU + SONUÇ
+        ════════════════════════════════════════ -->
+        <section class="h7-form-section py-5" id="kayitFormu">
+            <div class="container">
+                <div class="row g-5 justify-content-center">
+
+                    <!-- Form Kartı -->
+                    <div class="col-lg-7">
+                        <div class="card h7-form-card border-0 shadow-sm">
+                            <div class="card-body p-4 p-md-5">
+                                <h2 class="h7-section-title mb-1">Etkinliğe Kayıt Ol</h2>
+                                <p class="text-muted mb-4">Tüm alanları eksiksiz doldurun.</p>
+
+                                <!-- Hata/Başarı Uyarısı -->
+                                <div id="formAlert" class="alert d-none" role="alert"></div>
+
+                                <form id="registrationForm" novalidate>
+
+                                    <!-- Ad Soyad -->
+                                    <div class="mb-3">
+                                        <label for="fullName" class="form-label h7-label">
+                                            <i class="bi bi-person-fill me-1"></i>Ad Soyad
+                                        </label>
+                                        <input type="text" class="form-control h7-input" id="fullName"
+                                            placeholder="Örn: Mehmet İhsan Ekinci" autocomplete="off">
+                                    </div>
+
+                                    <!-- E-posta -->
+                                    <div class="mb-3">
+                                        <label for="emailAddr" class="form-label h7-label">
+                                            <i class="bi bi-envelope-fill me-1"></i>E-posta
+                                        </label>
+                                        <input type="email" class="form-control h7-input" id="emailAddr"
+                                            placeholder="ornek@email.com">
+                                    </div>
+
+                                    <!-- Bölüm -->
+                                    <div class="mb-3">
+                                        <label for="department" class="form-label h7-label">
+                                            <i class="bi bi-mortarboard-fill me-1"></i>Bölüm
+                                        </label>
+                                        <select class="form-select h7-input" id="department">
+                                            <option value="" selected disabled>Bölümünüzü seçin...</option>
+                                            <option value="Bilgisayar Mühendisliği">Bilgisayar Mühendisliği</option>
+                                            <option value="Yazılım Mühendisliği">Yazılım Mühendisliği</option>
+                                            <option value="Elektrik-Elektronik Mühendisliği">Elektrik-Elektronik Mühendisliği</option>
+                                            <option value="Endüstri Mühendisliği">Endüstri Mühendisliği</option>
+                                            <option value="Yönetim Bilişim Sistemleri">Yönetim Bilişim Sistemleri</option>
+                                            <option value="Diğer">Diğer</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Katılım Türü -->
+                                    <div class="mb-3">
+                                        <label class="form-label h7-label">
+                                            <i class="bi bi-ticket-perforated-fill me-1"></i>Katılım Türü
+                                        </label>
+                                        <div class="h7-radio-group">
+                                            <div class="form-check h7-radio-item">
+                                                <input class="form-check-input" type="radio" name="attendanceType"
+                                                    id="typeYuz" value="Yüz Yüze" checked>
+                                                <label class="form-check-label" for="typeYuz">
+                                                    🏟️ Yüz Yüze Katılım
+                                                </label>
+                                            </div>
+                                            <div class="form-check h7-radio-item">
+                                                <input class="form-check-input" type="radio" name="attendanceType"
+                                                    id="typeOnline" value="Online">
+                                                <label class="form-check-label" for="typeOnline">
+                                                    💻 Online Katılım
+                                                </label>
+                                            </div>
+                                            <div class="form-check h7-radio-item">
+                                                <input class="form-check-input" type="radio" name="attendanceType"
+                                                    id="typeHibrit" value="Hibrit">
+                                                <label class="form-check-label" for="typeHibrit">
+                                                    🔀 Hibrit
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- İlgi Alanları (checkbox) -->
+                                    <div class="mb-3">
+                                        <label class="form-label h7-label">
+                                            <i class="bi bi-stars me-1"></i>İlgilendiğiniz Konular
+                                        </label>
+                                        <div class="h7-check-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="topicAI" value="Yapay Zeka">
+                                                <label class="form-check-label" for="topicAI">Yapay Zeka</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="topicWeb" value="Web Teknolojileri">
+                                                <label class="form-check-label" for="topicWeb">Web Teknolojileri</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="topicCloud" value="Bulut Bilişim">
+                                                <label class="form-check-label" for="topicCloud">Bulut Bilişim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="topicSec" value="Siber Güvenlik">
+                                                <label class="form-check-label" for="topicSec">Siber Güvenlik</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Kısa Mesaj -->
+                                    <div class="mb-4">
+                                        <label for="userMessage" class="form-label h7-label">
+                                            <i class="bi bi-chat-left-text-fill me-1"></i>Kısa Mesaj
+                                        </label>
+                                        <textarea class="form-control h7-input" id="userMessage" rows="3"
+                                            placeholder="Beklentilerinizi veya sorularınızı yazın..."></textarea>
+                                    </div>
+
+                                    <!-- Gönder Butonu -->
+                                    <button type="submit" class="btn btn-primary w-100 h7-btn-submit" id="submitBtn">
+                                        <i class="bi bi-send-fill me-2"></i>Başvuruyu Tamamla
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sonuç Paneli -->
+                    <div class="col-lg-5">
+                        <div class="h7-result-wrapper" id="resultPanel">
+                            <!-- Başlangıç durumu -->
+                            <div class="h7-result-placeholder" id="resultPlaceholder">
+                                <div class="h7-placeholder-icon">📋</div>
+                                <p class="h7-placeholder-text">Henüz başvuru yapılmadı.</p>
+                                <p class="text-muted small">Formu doldurup gönderin,<br>başvuru özeti burada görünecek.</p>
+                            </div>
+                            <!-- Özet kartı (JS tarafından doldurulur) -->
+                            <div id="resultSummary" class="d-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             5/5 — FOOTER
+        ════════════════════════════════════════ -->
+        <footer class="main-footer flex-center">
+            <p>© 2026 - Mehmet İhsan Ekinci | Tüm Hakları Saklıdır.</p>
+        </footer>
+
+    </div><!-- /wrapper -->
+
+    <!-- Bootstrap Bundle JS (Popper dahil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmB3bEH4+A7EEGK3Dc0rh7FROq0"
+        crossorigin="anonymous"></script>
+
+    <!-- Proje Navbar JS -->
+    <script src="scripts/navbar.js"></script>
+    <!-- Hafta 7 JS -->
+    <script src="scripts/hafta7.js"></script>
+</body>
+
+</html>

@@ -28,7 +28,8 @@
     border-bottom: 1px solid var(--border-color);
     position: sticky;          /* scroll'da üstte sabit kalır */
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    flex-wrap: wrap;           /* mobilde menü alt satıra geçer */
 }
 
 /* Logo resmi — navbar yüksekliğini bozmaz */
@@ -45,6 +46,54 @@
     flex-direction: row;       /* dikey liste sorununu çözer */
     align-items: center;
     gap: 30px;
+}
+
+/* ─────────────────────────────────────────────
+   HAMBURGERMENİSİ BUTONU
+   Sadece mobilde görünür; üç yatay çizgi
+───────────────────────────────────────────── */
+.hamburger-btn {
+    display: none;             /* masaüstünde gizli */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.hamburger-btn:hover {
+    background-color: var(--bg-color);
+}
+
+/* Üç çizgi */
+.hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--dark-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Açık (X) durumu animasyonu */
+.hamburger-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ─────────────────────────────────────────────
@@ -266,13 +315,111 @@
     gap: 40px;
 }
 
-/* Responsive */
+/* ─────────────────────────────────────────────
+   RESPONSIVE — Mobil (≤ 768px)
+───────────────────────────────────────────── */
 @media (max-width: 768px) {
-    .navbar { padding: 0 5%; }
-    .nav-links { gap: 16px; }
-    .hero, .main-content { flex-direction: column; padding: 40px 5%; }
-    .cards-section, .info-section { padding: 30px 5%; }
-    .app-section { padding: 40px 5%; }
-    .dropdown-menu { right: auto; left: 0; }
+
+    /* Navbar: hamburger görünür, nav-links gizli */
+    .navbar {
+        padding: 0 5%;
+        align-items: center;
+    }
+
+    .hamburger-btn {
+        display: flex;         /* sadece mobilde göster */
+    }
+
+    /* Nav linkleri gizle; .open sınıfıyla aç */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        padding: 12px 0 16px;
+        border-top: 1px solid var(--border-color);
+        background-color: var(--white);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Nav link öğeleri tam genişlik */
+    .nav-links > li {
+        width: 100%;
+    }
+
+    .nav-links > li > a,
+    .nav-links > li > .dropdown-toggle {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+        border-bottom: none;
+        border-radius: 6px;
+    }
+
+    .nav-links > li > a:hover,
+    .nav-links > li > .dropdown-toggle:hover {
+        background-color: var(--bg-color);
+    }
+
+    /* Dropdown mobilde: absolute değil, normal akışta */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0 0 0 16px;
+        animation: none;
+        background-color: transparent;
+        min-width: unset;
+    }
+
+    .dropdown-menu::before {
+        display: none;         /* görünmez köprüye gerek yok */
+    }
+
+    .dropdown-menu li a {
+        margin: 0;
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    /* Dropdown hover ile açılma → mobilde sadece click ile */
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: flex;
+    }
+
+    /* Hero ve içerik düzeni */
+    .hero, .main-content {
+        flex-direction: column;
+        padding: 30px 5%;      /* py-5 → py-3 ekvivalenti */
+    }
+
+    .cards-section, .info-section {
+        padding: 24px 5%;
+    }
+
+    .app-section {
+        padding: 30px 5%;
+    }
+
+    /* Yazı boyutları: ~%20 küçült */
+    h1 { font-size: 1.85rem; }     /* ~2.5rem → 2.0rem arası */
+    h2 { font-size: 1.45rem; }     /* ~1.8rem → 1.45rem */
+
+    /* Butonlar: tam genişlik */
     .btn { width: 100%; text-align: center; }
+
+    /* Hero butonları dikey sırala */
+    .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

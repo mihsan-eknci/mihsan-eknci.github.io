@@ -31,7 +31,12 @@
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Mihsan Logo" class="navbar-logo">
             </a>
-            <ul class="nav-links">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="about.html">Hakkımda</a></li>
                 <li><a href="interests.html">İlgi Alanlarım</a></li>
@@ -61,11 +66,11 @@
                             Yapay zeka, web teknolojileri ve yazılım mühendisliği üzerine ilham dolu
                             oturumlar seni bekliyor!
                         </p>
-                        <div class="d-flex flex-wrap gap-3 mt-4">
-                            <a href="#kayitFormu" class="btn btn-primary h7-btn-main" id="heroKayitBtn">
+                        <div class="d-flex flex-column flex-sm-row flex-wrap gap-3 mt-4">
+                            <a href="#kayitFormu" class="btn btn-primary h7-btn-main w-100 w-sm-auto" id="heroKayitBtn">
                                 <i class="bi bi-pencil-square me-2"></i>Kayıt Ol
                             </a>
-                            <button type="button" class="btn btn-outline-secondary h7-btn-theme" id="themeToggleBtn">
+                            <button type="button" class="btn btn-outline-secondary h7-btn-theme w-100 w-sm-auto" id="themeToggleBtn">
                                 <i class="bi bi-moon-stars-fill me-2" id="themeIcon"></i>Tema Değiştir
                             </button>
                         </div>

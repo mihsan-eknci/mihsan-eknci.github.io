@@ -5,7 +5,8 @@
  *  1. window.location.pathname'e göre aktif nav linkini otomatik işaretler.
  *  2. "Uygulamalar" alt sayfalarında dropdown toggle'ı da aktif yapar.
  *  3. Dropdown için click-toggle (mobil & klavye desteği) sağlar.
- *  4. Dışarı tıklandığında dropdown'ı kapatır.
+ *  4. Dışarı tıklandığında dropdown'ı kapatir.
+ *  5. Hamburger butonu ile mobil menünün açılıp kapanmasını yönetir.
  */
 
 'use strict';
@@ -80,6 +81,37 @@
         if (e.key === 'Escape') {
             document.querySelectorAll('.dropdown.open')
                 .forEach(d => d.classList.remove('open'));
+            // Mobil menüyü de kapat
+            const navLinks = document.querySelector('.nav-links');
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            if (navLinks) navLinks.classList.remove('open');
+            if (hamburgerBtn) hamburgerBtn.classList.remove('open');
+        }
+    });
+
+    // ─── 5. Hamburger Menü Toggle ────────────────────────────────────
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navLinksList = document.querySelector('.nav-links');
+
+    if (hamburgerBtn && navLinksList) {
+        hamburgerBtn.addEventListener('click', function () {
+            const isOpen = navLinksList.classList.contains('open');
+            navLinksList.classList.toggle('open', !isOpen);
+            hamburgerBtn.classList.toggle('open', !isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+    }
+
+    // Hamburger menü - dışarı tıklayınca kapat
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.navbar')) {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger-btn');
+            if (navLinks) navLinks.classList.remove('open');
+            if (hamburger) {
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 

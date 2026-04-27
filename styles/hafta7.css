@@ -153,6 +153,65 @@
     display: flex !important;
 }
 
+/* Mobilde hamburger + nav-links düzenlemesi */
+@media (max-width: 768px) {
+    .wrapper > nav.navbar {
+        padding: 0 5% !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+    }
+
+    /* Nav-links: varsayılan gizli, .open ile açılır */
+    .wrapper > nav.navbar .nav-links {
+        display: none !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        width: 100% !important;
+        padding: 12px 0 16px !important;
+        flex-wrap: wrap !important;
+        border-top: 1px solid var(--border-color) !important;
+    }
+
+    .wrapper > nav.navbar .nav-links.open {
+        display: flex !important;
+    }
+
+    .wrapper > nav.navbar .nav-links > li {
+        width: 100% !important;
+    }
+
+    .wrapper > nav.navbar .nav-links > li > a,
+    .wrapper > nav.navbar .dropdown-toggle {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px 8px !important;
+        border-bottom: none !important;
+        border-radius: 6px !important;
+    }
+
+    /* Dropdown mobilde static akışta */
+    .wrapper > nav.navbar .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 0 0 16px !important;
+        animation: none !important;
+        background-color: transparent !important;
+        min-width: unset !important;
+        display: none !important;
+    }
+
+    .wrapper > nav.navbar .dropdown:hover .dropdown-menu {
+        display: none !important;
+    }
+
+    .wrapper > nav.navbar .dropdown.open .dropdown-menu {
+        display: flex !important;
+    }
+}
+
 /* ═══════════════════════════════════════════════════════════════ */
 
 
@@ -688,16 +747,55 @@
     background-color: #1a1d2e !important;
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+/* ─── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 991px) {
     .h7-result-wrapper {
         position: static;
     }
 }
 
-@media (max-width: 767px) {
-    .h7-hero { min-height: auto; padding: 40px 0; }
-    .h7-event-badge { flex-direction: column; text-align: center; }
+@media (max-width: 768px) {
+    /* Hero: min-height ve padding küçült (py-5 → py-3 ekvivalenti) */
+    .h7-hero {
+        min-height: auto;
+        padding: 28px 0;           /* py-5 (48px) → ~py-3 (28px) */
+    }
+
+    /* Öne çıkanlar ve form bölümü padding azalt */
+    .h7-features-section.py-5,
+    .h7-form-section.py-5 {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+
+    /* Etkinlik kart görseli: dikey yerleşim */
+    .h7-event-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Radio grup: tam genişlik */
     .h7-radio-group { flex-direction: column; }
-    .h7-radio-item { min-width: 100%; }
+    .h7-radio-item  { min-width: 100%; }
+
+    /* Başlık boyutları: ~%20 küçült */
+    .h7-hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    }
+
+    .h7-section-title {
+        font-size: 1.3rem !important;
+    }
+
+    /* Hero tanım metnini de küçült */
+    .h7-hero-desc {
+        font-size: 0.95rem;
+    }
+
+    /* Hero butonları (Bootstrap ile): mobilde tam genişlik */
+    .h7-btn-main,
+    .h7-btn-theme {
+        width: 100%;
+        text-align: center;
+    }
 }

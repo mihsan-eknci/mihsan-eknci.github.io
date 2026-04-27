@@ -18,6 +18,19 @@
     gap: 30px;
 }
 
+/* Mobilde hamburger manığı: nav-links gizle, sadece .open ile aç */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+}
+
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--primary-color);

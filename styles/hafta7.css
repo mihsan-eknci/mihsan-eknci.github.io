@@ -153,12 +153,56 @@
     display: flex !important;
 }
 
+/* Hamburger buton: Masaüstünde gizli, Bootstrap genel button sıfırlamalarını ezip proje stillerini korur */
+.wrapper > nav.navbar .hamburger-btn {
+    display: none !important; /* masaüstünde gizli — mobil kural aşağıda override eder */
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    border-radius: 8px !important;
+    z-index: 1050 !important;
+    box-shadow: none !important;
+}
+
+.wrapper > nav.navbar .hamburger-btn span {
+    display: block !important;
+    width: 24px !important;
+    height: 2px !important;
+    background-color: var(--dark-color) !important;
+    border-radius: 2px !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+    transform-origin: center !important;
+}
+
+.wrapper > nav.navbar .hamburger-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+}
+.wrapper > nav.navbar .hamburger-btn.open span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+}
+.wrapper > nav.navbar .hamburger-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+}
+
 /* Mobilde hamburger + nav-links düzenlemesi */
 @media (max-width: 768px) {
     .wrapper > nav.navbar {
         padding: 0 5% !important;
         flex-wrap: wrap !important;
         align-items: center !important;
+    }
+
+    /* Hamburger mobilde görünür yap */
+    .wrapper > nav.navbar .hamburger-btn {
+        display: flex !important;
     }
 
     /* Nav-links: varsayılan gizli, .open ile açılır */
